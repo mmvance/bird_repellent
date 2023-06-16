@@ -93,15 +93,15 @@ void List_2A_Play_WT588F(void)
 {
     Line_2A_WT588F(0xF3);
     delay_ms(2); //延时2ms
-    Line_2A_WT588F(0x01);
+    Line_2A_WT588F(0x01);//第一段语音
     delay_ms(5); //延时5ms
     Line_2A_WT588F(0xF3);
     delay_ms(2); //延时2ms
-    Line_2A_WT588F(0x02);
+    Line_2A_WT588F(0x02);//第二段语音
     delay_ms(5); //延时5ms
     Line_2A_WT588F(0xF3);
     delay_ms(2); //延时2ms
-    Line_2A_WT588F(0x03);
+    Line_2A_WT588F(0x03);//第三段语音
     delay_ms(5); //延时5ms
 }
 

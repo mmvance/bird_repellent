@@ -46,7 +46,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -92,6 +91,7 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   delay_init(72);
+  HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);//开启PWM输出
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -101,6 +101,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    ultrasonic_duty(400);//占空比400/1000
+    List_2A_Play_WT588F();//开始语音播报
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
