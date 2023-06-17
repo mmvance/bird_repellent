@@ -158,13 +158,14 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 
 
 
-void ultrasonic_duty(uint16_t duty)
+void ultrasonic_duty(uint16_t duty)//修改占空比比较值,实际占空比为duty/fre;
 {
-  __HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,10);
+  __HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,duty);
 }
-void ultrasonic_fre(uint16_t fre)
+
+void ultrasonic_fre(uint16_t fre)//可以改变arr以改变频率,频率=1M/fre;
 {
-  __HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,10);
+  __HAL_TIM_SET_AUTORELOAD(&htim1, fre-1);
 }
 
 /* USER CODE END 1 */
